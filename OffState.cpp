@@ -3,28 +3,24 @@
 #include "OffState.h"
 #include "ReadyState.h"
 
-OffState::OffState(Phone *phone) : State(phone)
+void OffState::homeButton(Phone *phone)
 {
+    phone->setState(new LockedState());
+    phone->turnOn();
 }
 
-void OffState::homeButton()
+void OffState::powerButton(Phone *phone)
 {
-    getPhone()->setState(new LockedState(getPhone()));
-    getPhone()->turnOn();
+    phone->setState(new LockedState());
+    phone->turnOn();
 }
 
-void OffState::powerButton()
-{
-    getPhone()->setState(new LockedState(getPhone()));
-    getPhone()->turnOn();
-}
-
-void OffState::volumeUpButton()
+void OffState::volumeUpButton(Phone *phone)
 {
     cout << "Locked" << endl;
 }
 
-void OffState::volumeDownButton()
+void OffState::volumeDownButton(Phone *phone)
 {
     cout << "Locked" << endl;
 }

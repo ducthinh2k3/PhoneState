@@ -3,7 +3,7 @@
 
 Phone::Phone()
 {
-    this->state = new OffState(this);
+    this->state = new OffState();
 }
 
 State *Phone::getState()
@@ -51,22 +51,22 @@ void Phone::volumeDown()
 // button
 void Phone::homeButton()
 {
-    this->state->homeButton();
+    this->state->homeButton(this);
 }
 
 void Phone::powerButton()
 {
-    this->state->powerButton();
+    this->state->powerButton(this);
 }
 
 void Phone::volumeUpButton()
 {
-    this->state->volumeUpButton();
+    this->state->volumeUpButton(this);
 }
 
 void Phone::volumeDownButton()
 {
-    this->state->volumeDownButton();
+    this->state->volumeDownButton(this);
 }
 
 Phone::~Phone()

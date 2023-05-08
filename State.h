@@ -3,14 +3,9 @@ class Phone;
 
 class State
 {
-private:
-    Phone *phone;
-
 public:
-    State(Phone *phone);
-    Phone *getPhone();
-    virtual void homeButton() = 0;
-    virtual void powerButton() = 0;
-    virtual void volumeUpButton() = 0;
-    virtual void volumeDownButton() = 0;
+    virtual void homeButton(Phone* phone) = 0;
+    virtual void powerButton(Phone* phone) = 0;
+    virtual void volumeUpButton(Phone* phone) = 0;
+    virtual void volumeDownButton(Phone* phone) = 0;
 };

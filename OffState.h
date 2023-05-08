@@ -4,9 +4,8 @@
 class OffState : public State
 {
 public:
-    OffState(Phone *phone);
-    void homeButton();
-    void powerButton();
-    void volumeUpButton();
-    void volumeDownButton();
+    void homeButton(Phone* phone);
+    void powerButton(Phone* phone);
+    void volumeUpButton(Phone* phone);
+    void volumeDownButton(Phone* phone);
 };

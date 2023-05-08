@@ -3,27 +3,23 @@
 #include "ReadyState.h"
 #include "LockedState.h"
 
-ReadyState::ReadyState(Phone *phone) : State(phone)
+void ReadyState::homeButton(Phone *phone)
 {
+    phone->home();
 }
 
-void ReadyState::homeButton()
+void ReadyState::powerButton(Phone *phone)
 {
-    getPhone()->home();
+    phone->setState(new OffState());
+    phone->lock();
 }
 
-void ReadyState::powerButton()
+void ReadyState::volumeUpButton(Phone *phone)
 {
-    getPhone()->setState(new OffState(getPhone()));
-    getPhone()->lock();
+    phone->volumeUp();
 }
 
-void ReadyState::volumeUpButton()
+void ReadyState::volumeDownButton(Phone *phone)
 {
-    getPhone()->volumeUp();
-}
-
-void ReadyState::volumeDownButton()
-{
-    getPhone()->volumeDown();
+    phone->volumeDown();
 }

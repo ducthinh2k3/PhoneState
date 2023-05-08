@@ -4,10 +4,9 @@
 class LockedState : public State
 {
 public:
-    LockedState(Phone *phone);
-    void homeButton();
-    void powerButton();
-    void volumeUpButton();
-    void volumeDownButton();
+    void homeButton(Phone* phone);
+    void powerButton(Phone* phone);
+    void volumeUpButton(Phone* phone);
+    void volumeDownButton(Phone* phone);
 };
 
